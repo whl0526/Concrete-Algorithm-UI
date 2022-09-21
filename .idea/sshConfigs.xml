@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="classnet.mju.ac.kr" id="61042c56-94d1-471e-b70f-ba25b399584c" port="1004" nameFormat="DESCRIPTIVE" username="s60161889" />
+    </configs>
+  </component>
+</project>

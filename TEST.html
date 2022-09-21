@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Maturity</title>
+    <!--  <link rel="stylesheet" href="style.css">-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/f66c87708f.js" crossorigin="anonymous"></script>
+
+    <!-- <script>
+       function myfunction(){
+           console.log(document.getElementById('KEY').value);
+           console.log(document.getElementById('SECRET').value);
+           console.log(document.getElementById('wc').value);
+           console.log(document.getElementById('algorithm').value);
+        }
+
+    </script>-->
+
+    <!--
+    <script>
+        const data = document.getElementById('data');
+        data.addEventListener('enter', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const searchParams =new URLsearchParams();
+
+            for (const pari of formData) {
+                searchParams.append(pair[0], pair[1]);
+            }
+
+            const url = "https://oa.tapaculo365.com/tp365/v1/account/check?api_key=4528458&api_secret=3fa6d40e4461cd250a683b86eed42bad"
+
+            fetch(url).then((response) => console.log("response", response))
+                .catch(function (error) {
+                    console.error(error);
+                })
+        });
+    </script> -->
+
+
+</html>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Work Sans', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: gray;
+        background-size: cover;
+    }
+
+    body::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .7)
+    }
+
+    .API {
+        position: relative;
+        z-index: 2;
+    }
+
+    .API h1 {
+        font-family: 'Nanum Gothic', sans-serif;
+        font-size: 30px;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    .API h2 {
+        font-family: 'Nanum Gothic', sans-serif;
+        font-size: 13px;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .int-area {
+        font-family: 'Work Sans', sans-serif;
+        width: 400px;
+        position: relative;
+        margin-top: 20px;
+    }
+
+    .int-area:first-child {
+        margin-top: 0;
+    }
+
+    .int-area input {
+        width: 100%;
+        padding: 20px 10px 10px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #999;
+        font-size: 19px;
+        color: #fff;
+        outline: none;
+
+    }
+
+    .int-area label {
+        position: absolute;
+        left: 10px;
+        top: 15px;
+        font-size: 18px;
+        color: #999;
+        transition: all .4s ease;
+
+    }
+
+    .int-area label.warning {
+        color: red !important;
+        animation: warning .3s ease;
+        animation-iteration-count: 3;
+    }
+
+    @keyframes warning {
+        0% {
+            transform: translateX(-8px);
+        }
+
+        25% {
+            transform: translateX(8px);
+        }
+
+        50% {
+            transform: translateX(-8px);
+        }
+
+        75% {
+            transform: translateX(8px);
+        }
+
+    }
+
+    .int-area input:focus + label,
+    .int-area input:valid + label {
+        top: -4px;
+        font-size: 13px;
+        color: #166cea;
+
+    }
+
+
+    .caption { 
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .caption a {
+        font-size: 15px;
+        color: #999;
+
+    }
+
+    .CH_Name {
+        margin-top: 20px;
+        border-bottom: 1px solid #999;
+        margin-bottom: 20px;
+        color: #999;
+        width: 100%;
+        height: 50px;
+        font-size: 20px;
+        padding: 5px 15px;
+    }
+
+    .wc {
+        margin-top: 20px;
+        border-bottom: 1px solid #999;
+        margin-bottom: 20px;
+        color: #999;
+        width: 100%;
+        height: 50px;
+        font-size: 20px;
+        padding: 5px 15px;
+    }
+
+
+    .algorithm {
+        margin-top: 20px;
+        border-bottom: 1px solid #999;
+        margin-bottom: 20px;
+        color: #999;
+        width: 100%;
+        height: 50px;
+        font-size: 20px;
+        padding: 5px 10px;
+
+    }
+
+
+    .select1:after {
+        content: "";
+        display: block;
+        border-style: solid;
+        border-width: 6px 15px 0 5px;
+        border-color: #166cea transparent transparent transparent;
+        position: absolute;
+        top: 50%;
+        right: 1.5rem;
+        z-index: 1;
+        margin-top: -3.3px;
+        cursor: pointer;
+    }
+
+    .select1 {
+        padding: 1px 5px 1px 10px;
+        width: 43%;
+        background: transparent;
+        border: 1px solid #ccc;
+        font-size: 1.3rem;
+        color: #999;
+        border-radius: 6.5px;
+        transition: all .6s ease;
+    }
+
+    .select1:focus {
+        outline: 0;
+        border: solid 1px #166cea;
+        transition: all .6s ease;
+    }
+
+    .btn-area {
+        margin-top: 40px;
+
+    }
+
+    .btn-area button {
+        width: 100%;
+        height: 50px;
+        background: transparent;
+        color: #fff;
+        font-size: 22px;
+        border: solid 4px #166cea;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: 1.2s;
+    }
+
+    .enter:focus {
+        background: #166cea;
+        transition: all .1s ease;
+
+    }
+
+    .result {
+
+        margin-top: 30px;
+        width: 100%;
+        height: 50px;
+        background: transparent;
+        color: #166cea;
+        font-size: 20px;
+
+    }
+    .time{
+        color:red;
+
+    }
+  
+
+</style>
+</head>
+
+<body>
+
+
+<section class="API">
+    <h1>데키스트</h1>
+    <h2>적산온도 기반 강도추정</h2>
+
+    <form action="" name="data" id="won">
+
+        <!--div class="int-area">
+            <input type="text" name="device_mac" id="device_mac" autocomplete="off" required>
+            <label for="device_mac">device_mac</label>
+        </div>
+
+        <div class="int-area">
+            <input type="text" name="sensor_mac" id="sensor_mac" autocomplete="off" required>
+            <label for="sensor_mac">sensor_mac</label>
+        </div>
+
+        <div class="int-area">
+            <input type="text" name="KEY" id="KEY" autocomplete="off" required>
+            <label for="KEY"><i class="fas fa-key"></i>&nbsp;api_key</label>
+        </div>
+
+        <div class="int-area">
+            <input type="text" name="SECRET" id="SECRET" autocomplete="off" required>
+            <label for="SECRET"><i class="fab fa-keycdn"></i>&nbsp;api_secret</label>
+        </div-->
+
+        <div class="int-area">
+            <input type="datetime-local" id='time' name='time'>
+
+            <script>
+                window.addEventListener('load', () => {
+                    const now = new Date();
+                    now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+                    document.getElementById('time').value = now.toISOString().slice(0, 16);
+                });
+            </script>
+        </div>
+
+        <div class="CH_Name">
+            <label for="ch_name"><i class="fas fa-temperature-high"></i>&nbsp;CH_Name</label>
+            <select name="ch_name" id="ch_name" class="select1">
+
+            </select>
+
+        </div>
+
+
+        <!--div class="device_mac">
+            <label for="device_mac"><i class="fas fa-percent"></i>&nbsp;device_mac</label>
+            <select name="device_mac" id="device_mac" class="select1">
+
+            </select>
+
+        </div>
+         <div class="sensor_mac">
+            <label for="sensor_mac"><i class="fas fa-percent"></i>&nbsp;sensor_mac</label>
+            <select name="sensor_mac" id="sensor_mac" class="select1">
+
+            </select>
+
+        </div -->
+
+        <div class="wc">
+            <label for="wc"><i class="fas fa-percent"></i>&nbsp;&nbsp;&nbsp;&nbsp;W/C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <select name="wc" id="wc" class="select1">
+                <option value="40">40%</option>
+                <option value="50">50%</option>
+                <option value="60">60%</option>
+                <option value="70">70%</option>
+            </select>
+
+        </div>
+
+        <div class="algorithm">
+            <label for="ag"><i class="fas fa-calculator"></i>&nbsp;Algorithm&nbsp;</label>
+            <select name="ag" id="ag" class="select1">
+                <option value="plowman">Plowman</option>
+                <option value="lew&reichard">Lew & Reichard</option>
+                <option value="logistic">Logistic</option>
+                <option value="gompertz">Gompertz</option>
+            </select>
+        </div>
+
+        <div class="btn-area">
+            <button id="btn" type="button" class="enter" onclick="postStatus()">Submit</button>
+
+
+            <script>
+                async function test() {
+
+                    let response = await fetch("http://3.34.198.215:8000/api/Device", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        }
+
+                    });
+                    let data = await response.json();
+                    console.log(data)
+                    console.log(data[0]['ch_name'])
+                    console.log(data.length)
+                    var ch_name = "";
+                    //var device_mac = "";
+                    //var sensor_mac = "";
+                    for (var i=0; i<data.length; i++) {
+                        ch_name += "<option value="+data[i]['ch_name']+">"+data[i]['ch_name']+"</option>"
+                        //device_mac += "<option value="+data[i]['device_mac']+">"+data[i]['device_mac']+"</option>"
+                        //sensor_mac += "<option value="+data[i]['sensor_mac']+">"+data[i]['sensor_mac']+"</option>"
+
+                    }
+                    document.getElementById("ch_name").innerHTML = ch_name;
+                    //document.getElementById("device_mac").innerHTML = device_mac;
+                    //document.getElementById("sensor_mac").innerHTML = sensor_mac;
+
+                }
+                test()
+
+                const api_key = "4528458"
+                const api_secret = "3fa6d40e4461cd250a683b86eed42bad"
+                let a = ""
+
+                function func(response) {
+                    a = response
+                    console.log(a)
+                    return a
+                }
+
+                function getStatus() {
+                    fetch(`https://oa.tapaculo365.com/tp365/v1/account/check?api_key=${api_key}&api_secret=${api_secret}`)
+                        .then((response) => response.json())
+                        .then((response) => {
+                            //console.log(typeof response.status.toString())
+                            func(response.status.toString())
+                        })
+                }
+
+
+                async function postStatus() {
+                    var api = document.data;
+                    //var device_mac = api.device_mac.value;
+                    //var sensor_mac = api.sensor_mac.value;
+                    //console.log(device_mac)
+                    var ch_name = api.ch_name.value;
+                    var time = api.time.value;
+                    var wc = api.wc.value;
+                    var algorithm = api.ag.value;
+
+                    let response = await fetch("http://3.34.198.215:8000/api/Strength", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            "ch_name" : ch_name,
+                            //"device_mac" : device_mac,
+                            //"sensor_mac" : sensor_mac,
+                            "time": time,
+                            "wc": wc,
+                            "model": algorithm
+
+                        }),
+
+                    });// then(res => res.json()).then(res =>{console.log(res)})};
+
+                    let data = await response.json();
+                    if (data['sevenday'] == "no-data") {
+                        alert("데이터가 없습니다. 이전 날짜를 입력해주세요");
+                        console.log(data);
+                    } else {
+                        console.log(data);
+                        let {sevenday, fourteenday, twentyeightday, ninetyday} = data;
+                        // document.write("7days: ",data.sevenday+" ");
+                        // document.write("14days: ",data.fourteenday+" ");
+                        // document.write("28days: ",data.twentyeightday+" ");
+                        // document.write("90days: ",data.ninetyday+" ");
+                        document.getElementById('7day').textContent = '7day: ' + sevenday;
+                        document.getElementById('14day').textContent = '14day: ' + fourteenday;
+                        document.getElementById('28day').textContent = '28day: ' + twentyeightday;
+                        document.getElementById('90day').textContent = '90day: ' + ninetyday;
+                        document.getElementById('o').textContent = '단위: kg/cm^2';
+                    }
+                }
+            </script>
+        </div>
+
+    </form>
+    <div class="caption">
+        <a href="">RESET</a>
+
+        <div class="result">
+            <span id='7day'></span><br/>
+            <span id='14day'></span><br/>
+            <span id='28day'></span><br/>
+            <span id='90day'></span><br/>
+            <span id='o'></span>
+        </div>
+
+    </div>
+</section>
+
+
+<script>
+    let KEY = $('#KEY');
+    let SECRET = $('#SECRET');
+    let btn = $('#btn');
+
+    $(btn).on('click', function () {
+        if ($(KEY).val() == "") {
+            $(KEY).next('label').addClass('warning');
+            setTimeout(function () {
+                $('label').removeClass('warning');
+            }, 1500);
+        } else if ($(SECRET).val() == "") {
+            $(SECRET).next('label').addClass('warning');
+            setTimeout(function () {
+                $('label').removeClass('warning');
+            }, 1500);
+        }
+
+    });
+</script>
+</body>
+
+</html>
